@@ -1,6 +1,6 @@
 # nand2tetris
 
-官网：https://www.nand2tetris.org/
+官网：https://www.nand2tetris.org/ 
 代码及工具下载：https://drive.google.com/open?id=1xZzcMIUETv3u3sdpM_oTJSTetpVee3KZ
 
 ### win10下使用注意点
