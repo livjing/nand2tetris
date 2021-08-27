@@ -9,5 +9,3 @@ Project 0 guidelines in the website.
 
 
 
-个人备注：
-01章 所有基本逻辑门都是在Nand的基础上建立的，即使是 And，Or，Not
