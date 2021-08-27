@@ -1,0 +1,13 @@
+The only purpose of this file is to practice submitting files
+in the Nand to Tetris course websites in Coursera.
+
+There is no need to modify the contents of this file.
+All you have to do is submit it as is, following the 
+Project 0 guidelines in the website.
+
+
+
+
+
+个人备注：
+01章 所有基本逻辑门都是在Nand的基础上建立的，即使是 And，Or，Not
