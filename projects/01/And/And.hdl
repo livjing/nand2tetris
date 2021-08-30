@@ -7,7 +7,7 @@
  * And gate: 
  * out = 1 if (a == 1 and b == 1)
  *       0 otherwise
- * And = Nand(Nand(a,b), Nand(a,b))
+ * 思路：And = Nand(Nand(a,b), Nand(a,b))
  */
 
 CHIP And {
@@ -16,8 +16,13 @@ CHIP And {
 
     PARTS:
     // Put your code here:
+
+    // 方法一
     Nand(a=a, b=b, out=o1);
-    //Nand(a=a, b=b, out=o2);
-    //Nand(a=o1, b=o2, out=out);
-    Nand(a=o1, b=o1, out=out);
+    Nand(a=a, b=b, out=o2);
+    Nand(a=o1, b=o2, out=out);
+    
+    // 方法二：软件层次对方法一的优化 基于Nand(a,b)的结果out是一样的 没必要计算两次
+    // Nand(a=a, b=b, out=o1);
+    // Nand(a=o1, b=o1, out=out);
 }
