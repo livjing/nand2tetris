@@ -14,4 +14,6 @@ CHIP Inc16 {
 
     PARTS:
    // Put you code here:
+   // 15 .. 0 在最低位[0]只加1, 相当于0000 0000 0000 0001
+   Add16(a=in, b[0]=true, b[1..15]=false, out=out);
 }
