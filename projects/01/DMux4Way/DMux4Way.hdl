@@ -16,5 +16,16 @@ CHIP DMux4Way {
     OUT a, b, c, d;
 
     PARTS:
-    // Put your code here:
+    // Put your code here:                
+    DMux(in=in, sel=sel[1], a=o1, b=o2); //  (a,b) or (c,d)
+
+    DMux(in=o1, sel=sel[0], a=a, b=b);
+    DMux(in=o2, sel=sel[0], a=c, b=d);
+
+    // 假设：sel == 01
+    // 1) sel[1] == 0, o1 = in, o2 = 0
+    // 2) sel[0] == 1, a = 0, b = o1 = in 
+    //    sel[0] == 1, c = 0, d = o2 = 0
+    // 结果：{0, in, 0, 0}    
+
 }

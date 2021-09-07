@@ -7,6 +7,8 @@
  * Demultiplexor:
  * {a, b} = {in, 0} if sel == 0
  *          {0, in} if sel == 1
+ *  out: a = And(in, Not(sel)), b = And(in, sel)
+ *  利用 1 And ? = ? , 0 And ? = 0 的特性
  */
 
 CHIP DMux {
@@ -15,4 +17,8 @@ CHIP DMux {
 
     PARTS:
     // Put your code here:
+    Not(in=sel, out=notSel);
+    And(a=in, b=notSel, out=a);
+    And(a=in, b=sel, out=b);
+
 }

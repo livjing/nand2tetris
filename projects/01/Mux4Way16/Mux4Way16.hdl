@@ -9,6 +9,9 @@
  *       b if sel == 01
  *       c if sel == 10
  *       d if sel == 11
+ *  sel[1] 决定 a|b 还是 c|d 
+ *  if sel[1] == 0: a|b , if sel[0] == 0 ? a : b
+ *  if sel[1] == 1: c|d , if sel[0] == 1 ? c : d
  */
 
 CHIP Mux4Way16 {
@@ -17,4 +20,9 @@ CHIP Mux4Way16 {
 
     PARTS:
     // Put your code here:
+    Mux16(a=a, b=b, sel=sel[0], out=o1);  // a or b
+    Mux16(a=c, b=d, sel=sel[0], out=o2);  // c or d
+
+    Mux16(a=o1, b=o2, sel=sel[1], out=out); // (a or b) or (c or d)
+
 }

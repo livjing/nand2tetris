@@ -16,10 +16,10 @@ CHIP Mux {
 
     PARTS:
     // Put your code here:
-    And(a=b, b=sel, out=o1);
+    And(a=b, b=sel, out=o1);     // b And 1 = b || b And 0 = 0
     
     Not(in=sel, out=notSel);
-    And(a=a, b=notSel, out=o2);
+    And(a=a, b=notSel, out=o2);  // a And 0 = 0 || a And 1 = a
 
-    Or(a=o1, b=o2, out=out);
+    Or(a=o1, b=o2, out=out);    // Or(b, 0) = b || Or(0, a) = a
 }
