@@ -64,7 +64,7 @@ CHIP ALU {
     Mux16(a=f1, b=f2, sel=f, out=o1);
 
     // no
-    Not16(in=f3, out=o2);
+    Not16(in=o1, out=o2);
     Mux16(a=o1, b=o2, sel=no, out=out, out=o3);
 
     // zr 判断结果是否为0

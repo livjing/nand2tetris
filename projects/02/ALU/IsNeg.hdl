@@ -1,0 +1,17 @@
+
+/**
+ * 判断是否为负数
+ * 思路： 
+ * 使用 one bit Or 来判断最高位是否为1, out = Or(in[最高位], 0)
+ */
+ 
+ CHIP IsNeg{
+
+     IN in[16];
+     OUT out;
+
+     PARTS:
+     Or(a=in[15], b=false, out=out);
+ }
+
+ 
