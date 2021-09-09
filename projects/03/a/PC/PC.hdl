@@ -17,4 +17,15 @@ CHIP PC {
 
     PARTS:
     // Put your code here:
+    Mux16(a=preOut, b=addOut, sel=inc, out=o1);  // o1 = (preOut or addOut)
+
+    Mux16(a=o1, b=in, sel=load, out=o2); // o2 = ((preOut or addOut) or in)
+
+    Mux16(a=o2, b=false, sel=reset, out=o3); // o3 = ((preOut or addOut) or in) or false
+
+    // 前3次操作只是得到了真正需要输入的in到底是哪个
+
+    Register(in=o3, load=true, out=out, out=preOut); // let out = in
+
+    Inc16(in=preOut, out=addOut);  // out+=1
 }
