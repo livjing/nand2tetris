@@ -16,7 +16,7 @@ CHIP Mux {
 
     PARTS:
     // Put your code here:
-    And(a=b, b=sel, out=o1);     // b And 1 = b || b And 0 = 0
+    And(a=bl, b=sel, out=o1);     // b And 1 = b || b And 0 = 0
     
     Not(in=sel, out=notSel);
     And(a=a, b=notSel, out=o2);  // a And 0 = 0 || a And 1 = a
